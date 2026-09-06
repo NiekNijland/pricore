@@ -16,6 +16,11 @@ export default function PackageCard({ package: pkg }: PackageCardProps) {
                 <span className="font-medium transition-colors group-hover:text-primary">
                     {pkg.name}
                 </span>
+                {pkg.sourcePath && (
+                    <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-muted-foreground">
+                        {pkg.sourcePath}
+                    </code>
+                )}
             </div>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 {pkg.latestVersion && (

@@ -38,6 +38,7 @@ import {
     AlertCircle,
     CheckCircle2,
     EllipsisVertical,
+    FolderTree,
     Loader2,
     Package,
     PackageCheck,
@@ -205,6 +206,20 @@ export default function RepositoryShow({
                                 </Badge>
                             )}
                         </div>
+                        {repository.packagePaths && (
+                            <div className="flex flex-wrap items-center gap-1.5 text-muted-foreground">
+                                <FolderTree className="size-3.5" />
+                                <span>Package paths:</span>
+                                {repository.packagePaths.map((path) => (
+                                    <code
+                                        key={path}
+                                        className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs"
+                                    >
+                                        {path}
+                                    </code>
+                                ))}
+                            </div>
+                        )}
                         {repository.lastSyncedAt && (
                             <p className="text-muted-foreground">
                                 Last synced{' '}

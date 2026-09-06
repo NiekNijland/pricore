@@ -58,6 +58,7 @@ import {
     Download,
     EllipsisVertical,
     ExternalLink,
+    FolderTree,
     GitBranch,
     GitCommit,
     Globe,
@@ -881,6 +882,14 @@ export default function PackageShow({
                                                 {pkg.repositoryName}
                                             </span>
                                         )}
+                                    </span>
+                                )}
+                                {pkg.sourcePath && (
+                                    <span className="flex items-center gap-1.5">
+                                        <FolderTree className="h-3.5 w-3.5" />
+                                        <code className="font-mono">
+                                            {pkg.sourcePath}
+                                        </code>
                                     </span>
                                 )}
                                 {pkg.mirrorName && (
